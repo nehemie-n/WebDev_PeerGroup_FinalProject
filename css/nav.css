@@ -1,0 +1,53 @@
+
+.main-header .header-fx{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+    height: auto;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    background: black;
+    display: flex;
+}
+.main-header .header-replacer{
+    min-height: 50px;
+}
+.main-header .logo{
+    padding: 2px 2rem;
+}
+.main-header .menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 30px;
+    list-style: none;
+    margin: 0px;
+    margin-left: auto;
+    margin-left: auto;
+}
+
+.main-header .menu-link {
+    display: block;
+    padding: 1.2rem 1rem;
+    color: white;
+    position: relative;
+}
+.main-header .menu-link.active{
+    color: #f8a22f;
+}
+
+.main-header .menu-link.active::after{
+    height: 3px;
+    background: #f8a22f;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%; 
+    content: ""
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}

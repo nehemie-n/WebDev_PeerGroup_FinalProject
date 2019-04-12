@@ -1,0 +1,451 @@
+@import "./nav.css";
+@import "./footer.css";
+@import "./page_header.css";
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    color: black;
+    text-align: left;
+    background-color: #fff;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+h1 {
+    line-height: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    font-weight: 300;
+}
+
+/* utilities */
+.ov-wrap {
+    flex-wrap: wrap;
+}
+
+.mr-auto,
+.mrl-auto {
+    margin-right: auto;
+}
+
+.ml-2 {
+    margin-left: 20px;
+}
+
+.ml-1 {
+    margin-left: 10px;
+}
+
+.mr-2 {
+    margin-right: 20px;
+}
+
+.mr-1 {
+    margin-right: 10px;
+}
+
+.ml-auto,
+.mrl-auto {
+    margin-left: auto;
+}
+
+.text-primary {
+    color: #f8a22f;
+}
+
+.text-dark {
+    color: black;
+}
+
+.p3 {
+    padding: 3rem;
+}
+
+.p2 {
+    padding: 2rem;
+}
+
+.p1 {
+    padding: 1rem;
+}
+
+/**
+* containers
+* and wrappers
+*/
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 2rem 0px;
+    width: 100%;
+}
+
+.wrapper {}
+
+/**
+* Buttons
+*/
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.7rem 2.3rem;
+    border-radius: 35rem;
+    cursor: pointer;
+    transition: 300ms all ease-in-out;
+}
+
+.btn-circle-40 {
+    height: 40px !important;
+    width: 40px !important;
+    padding: unset !important;
+    border-radius: 30rem;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:focus,
+.btn:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: black;
+    background-color: #f8a22f;
+    border-color: #f8a22f;
+}
+
+.btn-outline-primary {
+    color: #f8a22f;
+    background: black;
+    border: 2px solid #f8a22f;
+}
+
+.btn-outline-primary:hover {
+    color: black;
+    background-color: #f8a22f;
+    border-color: #f8a22f;
+}
+
+.btn-dark {
+    color: #f8a22f;
+    background-color: black;
+    border-color: black;
+}
+
+/**
+Text alignment
+*/
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/**
+/*  */
+/* Row */
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.col-20 {
+    width: 20%;
+}
+
+.col-25 {
+    width: 25%;
+}
+
+.col-30 {
+    width: 30%;
+}
+
+.col-40 {
+    width: 40%;
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.col-60 {
+    width: 60%;
+}
+
+.col-70 {
+    width: 70%;
+}
+
+/**
+ * Home specific styles
+ * home-top
+ */
+.home-top {
+    min-height: 100vh;
+    background: url('./../images/mohamed-ajufaan-701619-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-top-ov {
+    min-height: 100vh;
+    /* display: block; */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: whitesmoke
+}
+
+.home-top-ov .wrapper {
+    max-width: 400px;
+}
+
+.home-top-ov h1 {
+    line-height: 2rem;
+}
+
+.home-top-ov * {
+    font-weight: 300;
+}
+
+/**
+/* 
+Want to book section */
+.want-to-book {
+    min-height: 90vh;
+    background: #f8a22f;
+}
+
+.want-to-book .col {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.row-images {
+    width: 100%;
+    padding-left: 20%;
+}
+
+
+.row-images .col-img {
+    min-height: 40vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    margin: 6px;
+}
+
+.row-images .col-img .btn-h {
+    opacity: 0;
+    transition: 400ms all ease;
+}
+
+.row-images .col-img:hover .btn-h {
+    opacity: 1;
+}
+
+/*  */
+/* want to sell section  */
+/*  */
+.want-to-sell {
+    background: url('./../images/Rooms/henry-co-736450-unsplash.jpg');
+    background-size: 40%
+}
+
+.want-to-sell .container {
+    min-height: 70vh;
+    background: black;
+    color: #f8a22f;
+    margin-left: auto;
+    margin-right: 0px;
+    max-width: 800px;
+}
+
+.want-to-sell .col {
+    padding: 2rem 10% 2rem 20%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+/*  */
+/* contact us page */
+/*  */
+.form {
+    padding: 1rem 2rem;
+    display: flex;
+    max-width: 500px;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.form .input-h {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: none;
+    border: 1px solid #f8a22f;
+    background: #f8a12f13;
+}
+
+.form input,
+.form textarea {
+    display: block;
+    padding: 0.7rem 1rem;
+    /* font-weight: bold; */
+    border: 1px solid black;
+    border-radius: 3px;
+    transition: 300ms ease;
+    width: 100%
+}
+
+.form .btn {
+    margin: auto;
+}
+
+
+
+
+/*  */
+/*  */
+/* Rooms & other elements */
+/*  */
+.element {
+    margin: 10px;
+    background-size: cover;
+    position: relative;
+    min-height: 70vh;
+    width: calc((100% / 3) - (10px * 3));
+    border-radius: 5px;
+}
+
+.element .ov {
+    position: absolute;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.element .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.element .bottom {
+    background: black;
+    padding: 10px 10px;
+    display: flex;
+    border-radius: 5px;
+    color: whitesmoke
+}
+
+/*  */
+.room .top {
+    color: whitesmoke;
+}
+
+/*  */
+/* Shop stuff */
+
+.prod .top {
+    color: #f8a22f;
+}
+
+.prod:hover .buy-btn-h {
+    opacity: 1;
+}
+
+.prod .bottom {
+    background: whitesmoke;
+    padding: 10px 10px;
+    display: flex;
+    border-radius: 25px;
+    color: black;
+    width: 95%;
+    margin: 10px auto
+}
+
+.prod .buy-btn-h {
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: 300ms ease;
+}
+
+/*  */
+/* restaurant stuff */
+/*  */
+
+
+.food .top {
+    color: #f8a22f;
+}
+
+
+.food .bottom {
+    background: #f8a22f;
+    border-radius: 25px;
+    color: black;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.food .buy-btn-h {
+    position: absolute;
+    top: 1vh;
+    width: 100%;
+    text-align: center;
+}
