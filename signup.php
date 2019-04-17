@@ -1,4 +1,6 @@
-
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,6 +59,23 @@
 				</div>
 			</div>
 		</div>
+		<?php
+		//handling the form submissions
+
+if(isset($_POST['submit'])){
+
+
+	$firstName = $_POST["first_name"];
+	$lastName = $_POST["last_name"];
+	$email = $_POST["email"];
+	$password = $_POST["password"];
+	
+	
+	insertUser($firstName,$lastName,$email,$password);
+	
+	}
+	
+	?>
 		<!--  -->
 		<!--  -->
 	</div>
@@ -69,21 +88,5 @@
 </body>
 </html>
 
-<?php
-//handling the form submissions
-
-if(isset($_POST['submit'])){
-
-echo "We are set bro";
-
-$firstName = $_POST["first_name"];
-$lastName = $_POST["last_name"];
-$email = $_POST["email"];
-$password = $_POST["password"];
 
 
-insertUser($firstName,$lastName,$email,$password);
-
-}
-
-?>

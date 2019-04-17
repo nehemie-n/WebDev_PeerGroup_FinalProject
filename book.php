@@ -1,4 +1,10 @@
-
+<?php
+ob_start();
+if(isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+	header("Location: index.php");
+     die('should have redirected by now');
+ }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,11 +38,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-40 mrl-auto">
-					<form name="cForm" class="form" action="">
+					<form name="cForm" method="post" class="form" action="book.php">
 					<!--  -->
 					<div class="input-h">
 						<label for="">Room</label>
-						<select name="room" id="room">
+						<select name="room_type" id="room">
 							<option value="max Rummer">max Rummer  $200</option>
 							<option value="Height Fuller">Height Fuller   $140</option>
 							<option value="Tech Filled">Tech Filled  $100</option>
@@ -48,26 +54,26 @@
 					<!--  -->
 					<div class="input-h">
 						<label for="number">Number</label>
-						<input id="number" max="5" min="0" value="0" type="number" required placeholder="Number">
+						<input name="room_number" id="number" max="5" min="0" value="0" type="number" required placeholder="Number">
 					</div>
 					<!--  -->
 					<div class="input-h">
 						<label for="">Check in Date</label>
-						<input type="date" required placeholder="Check in Date">
+						<input name="check_in_date" type="date" required placeholder="Check in Date">
 					</div>
 					<!--  -->
 					<div class="input-h">
 						<label for="">Check out Date</label>
-						<input type="date" required placeholder="Check out Date">
+						<input name="check_out_date" type="date" required placeholder="Check out Date">
 					</div>
 					<!--  -->
 					<div class="input-h">
 						<label for="">Description</label>
-						<textarea rows="10" type="text" placeholder="Description"></textarea>
+						<textarea name="description" rows="10" type="text" placeholder="Description"></textarea>
 					</div>
 					<!--  -->
 					<div class="input-h">
-						<button class="btn btn-dark">Book</button>
+						<button type="submit" name="submit" class="btn btn-dark">Book</button>
 					</div>
 					<!--  -->
 					</form>
@@ -79,6 +85,27 @@
 	</div>
 	<!--  -->
 	<!-- include the main footer -->
+<?php
+if(isset($_POST['submit'])){
+	require "database/database.php";
+
+	echo "We are set bro";
+	
+	$room_type = $_POST["room_type"];
+	$room_number = $_POST["room_number"];
+	$check_in_date = $_POST["check_in_date"];
+	$check_out_date = $_POST["check_out_date"];
+	$description = $_POST["description"];
+
+	book($room_type,$check_in_date,$check_out_date,$room_number,$description);
+	
+	
+
+	
+	}
+?>
+
+	
 	<?php
 		include "./components/footer.php";
 	?>

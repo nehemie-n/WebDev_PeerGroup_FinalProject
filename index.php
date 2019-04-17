@@ -1,4 +1,7 @@
 
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +45,7 @@
 					<div style="width:70%" class="wrapper">
 						<div style="width:100%" class="col-100 mrl-auto">
 						<!--  -->
-							<form name="cForm" method="post" class="form" action="">
+							<form name="cForm" method="post" class="form" action="index.php">
 								<h1 class="text-center text-primary p1">Login</h1>
 								<!--  -->
 								<div class="input-h">
@@ -145,6 +148,36 @@
 						</div>
 					</div>
 				</div>
+
+
+				<?php
+    session_start();
+    require "database/database.php";
+    $conn = new PDO("mysql:host=$dbServer;dbname=$dbname", $dbusername, $dbpassword);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $errMsg ="";
+
+    if(isset($_POST['submit'])){
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $stmt = $conn->prepare("SELECT*FROM users WHERE email =:email AND password =:password");
+        $stmt ->bindParam(':email',$email);
+        $stmt ->bindParam(':password', $password);
+        $stmt->execute();
+        $results = $stmt->fetch();
+        if($stmt->rowCount() >= 1 ){
+			$_SESSION['email'] = $email;
+			echo "am here";
+			ob_end_flush();
+			header("Location: rooms.php");
+    		 die('should have redirected by now');
+           
+        }else{
+            $errMsg = "<p>You are not logged</p>";
+        }
+    }
+
+    ?>
 			</div>
 		</div>
 		<!--  -->
