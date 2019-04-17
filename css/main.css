@@ -91,6 +91,10 @@ h5 {
     width: 100%;
 }
 
+/* paddings */
+.p3{
+    padding: 2rem 1rem;
+}
 .wrapper {}
 
 /**
@@ -98,7 +102,8 @@ h5 {
 */
 
 .btn {
-    display: inline-block;
+
+    display: inline-block !important;
     text-align: center;
     vertical-align: middle;
     border: 1px solid transparent;
@@ -106,12 +111,13 @@ h5 {
     border-radius: 35rem;
     cursor: pointer;
     transition: 300ms all ease-in-out;
+    margin: 5px;
 }
 
 .btn-circle-40 {
     height: 40px !important;
     width: 40px !important;
-    padding: unset !important;
+    padding: 0.3rem !important;
     border-radius: 30rem;
 }
 
@@ -221,6 +227,14 @@ Text alignment
     color: whitesmoke
 }
 
+.home-top-ov .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center
+}
+
 .home-top-ov .wrapper {
     max-width: 400px;
 }
@@ -313,6 +327,9 @@ Want to book section */
     font-size: 14px;
 }
 
+select{
+    padding: 0.5rem;
+}
 .form .input-h {
     padding: 0.5rem;
     display: flex;
@@ -328,7 +345,7 @@ Want to book section */
 .form textarea:focus {
     outline: none;
     border: 1px solid #f8a22f;
-    background: #f8a12f13;
+    background: #ffcb887e;
 }
 
 .form input,
@@ -357,7 +374,7 @@ Want to book section */
     margin: 10px;
     background-size: cover;
     position: relative;
-    min-height: 70vh;
+    min-height: 370px;
     width: calc((100% / 3) - (10px * 3));
     border-radius: 5px;
 }

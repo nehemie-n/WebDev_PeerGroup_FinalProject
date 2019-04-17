@@ -24,8 +24,9 @@
 		<!-- Main top -->
 		<div class="home-top">
 			<div class="home-top-ov">
-				<div class="container">
-					<div class="wrapper">
+				<div class="container"
+				>
+					<div style="width:40%" class="wrapper">
 						<h1>
 							Fancy 300 rooms of different kinds
 							at affordable prices
@@ -34,9 +35,40 @@
 							We can also you sell what you have brought from your home country. 
 							Let's share culture. 
 						</p>
-						<button class="btn btn-primary">
+						<a href="./rooms.php" class="btn btn-primary">
 							Find Rooms
-						</button>
+						</a>
+					</div>
+					<div style="width:70%" class="wrapper">
+						<div style="width:100%" class="col-100 mrl-auto">
+						<!--  -->
+							<form name="cForm" method="post" class="form" action="">
+								<h1 class="text-center text-primary p1">Login</h1>
+								<!--  -->
+								<div class="input-h">
+									<label for="">Email</label>
+									<input type="email" name="email" required placeholder="Email">
+								</div>
+								<!--  -->
+								<div class="input-h">
+									<label for="">Password</label>
+									<input type="password" name="password" required placeholder="Password">
+								</div>
+								<!--  -->
+								<!--  -->
+								<div class="input-h">
+									<button type="submit" name="submit" class="btn btn-dark">Sign in</button>
+								</div>
+								<!--  -->
+							</form>
+							
+							
+							<div class="text-center">
+								<p>OR</p>
+								<a href="./signup.php" class="btn btn-primary">Sign up</a>
+							</div>
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -57,9 +89,9 @@
 							Just choose we secure you wellness.
 							CLick below to see the rroms list.
 						</p>
-						<button class="btn btn-dark">
+						<a href="./rooms.php" class="btn btn-dark">
 							Rooms list 
-						</button>
+						</a>
 						</div>
 					</div>
 					
@@ -67,22 +99,22 @@
 						<div class="row-images row">
 							<div class="col-img" style="background-image:url('./images/Rooms/andrew-neel-1354776-unsplash.jpg')">
 								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
+									<a href="./rooms.php" class="btn btn-dark">Check these</a>
 								</div>
 							</div>
 							<div class="col-img" style="background-image:url('./images/Rooms/christopher-jolly-616571-unsplash.jpg')">
 								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
+									<a href="./rooms.php" class="btn btn-dark">Check these</a>
 								</div>
 							</div>
 							<div class="col-img" style="background-image:url('./images/Rooms/rhema-kallianpur-275251-unsplash.jpg')">
 								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
+									<a href="./rooms.php" class="btn btn-dark">Check these</a>
 								</div>
 							</div>
 							<div class="col-img" style="background-image:url('./images/Rooms/stephen-leonardi-416233-unsplash.jpg')">
 								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
+									<a href="./rooms.php" class="btn btn-dark">Check these</a>
 								</div>
 							</div>
 						</div>
@@ -104,12 +136,12 @@
 						<p>
 							Shopping as either a seller or buyer here at Hergesia.
 						</p>
-						<button class="btn btn-primary">
+						<a href="./shop.php" class="btn btn-primary">
 							Visit shop 
-						</button>
-						<button class="btn btn-outline-primary">
+						</a>
+						<a class="btn btn-outline-primary">
 							Sell your product 
-						</button>
+						</a>
 						</div>
 					</div>
 				</div>

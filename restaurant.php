@@ -49,7 +49,7 @@
 								<div class="ov">
 									<div class="top">
 										<div class="buy-btn-h">
-											<button class="btn btn-primary">Order</button>
+											<!-- <button class="btn btn-primary">Order</button> -->
 										</div>
 									</div>
 									<div class="bottom">

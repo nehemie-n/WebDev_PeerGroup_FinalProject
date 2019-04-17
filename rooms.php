@@ -52,7 +52,7 @@
 										16 rooms
 										<span class="ml-auto text-primary">book</span>
 										<div class="ml-1">
-											<button class="btn btn-primary btn-circle-40">+1</button>
+											<a href="./book.php" class="btn btn-primary btn-circle-40">+1</a>
 										</div>
 									</div>
 									<div class="bottom">
