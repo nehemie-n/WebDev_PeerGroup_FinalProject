@@ -13,6 +13,32 @@
 	<script src="./js/main.js"></script>
 </head>
 <body>
+    <?php
+    session_start();
+    require "database/database.php";
+    $conn = new PDO("mysql:host=$dbServer;dbname=$dbname", $dbusername, $dbpassword);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $errMsg ="";
+
+    if(isset($_POST['submit'])){
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        echo $email;
+        echo $password;
+        $stmt = $conn->prepare("SELECT*FROM users WHERE email =:email AND password =:password");
+        $stmt ->bindParam(':email',$email);
+        $stmt ->bindParam(':password', $password);
+        $stmt->execute();
+        $results = $stmt->fetch();
+        if($stmt->rowCount() >= 1 ){
+            $_SESSION['email'] = $email;
+            echo "<script>alert('hello you have logged in ')</script>";
+        }else{
+            $errMsg = "<p>You are not logged</p>";
+        }
+    }
+
+    ?>
 	<!-- include the main header -->
 	<?php
 		include "./components/header.php";
@@ -27,25 +53,26 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-50 mrl-auto">
-					<form name="cForm" class="form" action="">
+					<form name="cForm" method="post" class="form" action="">
 					<h1 class="text-center text-primary p1">Login</h1>
 					<!--  -->
 					<div class="input-h">
 						<label for="">Email</label>
-						<input type="email" required placeholder="Email">
+						<input type="email" name="email" required placeholder="Email">
 					</div>
 					<!--  -->
 					<div class="input-h">
 						<label for="">Password</label>
-						<input type="password" required placeholder="Password">
+						<input type="password" name="password" required placeholder="Password">
 					</div>
 					<!--  -->
 					<!--  -->
 					<div class="input-h">
-						<button class="btn btn-dark">Submit</button>
+						<button type="submit" name="submit" class="btn btn-dark">Submit</button>
 					</div>
 					<!--  -->
 					</form>
+					<p> <?php echo $errMsg ?></p>
 				</div>
 			</div>
 		</div>
@@ -60,3 +87,8 @@
 	<!--  -->
 </body>
 </html>
+
+
+
+
+

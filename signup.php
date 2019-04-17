@@ -15,6 +15,7 @@
 	<?php
 		include "./components/header.php";
 		giveMeHeader("");
+		require "database/database.php"
 	?>
 	<!-- do the main stuff in here -->
 	<div class="main">
@@ -25,27 +26,31 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-50 mrl-auto">
-					<form name="cForm" class="form" action="">
+					<form method="post" name="cForm" class="form" action="signup.php">
 						<h1 class="text-center text-primary p1">Signup</h1>
 						<!--  -->
 						<div class="input-h">
 							<label for="">Email</label>
-							<input type="email" required placeholder="Email">
+							<input name="email" type="email" required placeholder="Email">
 						</div>
 						<!--  -->
 						<div class="input-h">
 							<label for="">Names</label>
-							<input type="text" required placeholder="Names">
+							<input name="first_name" type="text" required placeholder="First name">
 						</div>
+						<div class="input-h">
+                            <label for="">Names</label>
+                            <input name="last_name" type="text" required placeholder="Last name">
+                        </div>
 						<!--  -->
 						<div class="input-h">
 							<label for="">Password</label>
-							<input type="password" required placeholder="Password">
+							<input name="password" type="password" required placeholder="Password">
 						</div>
 						<!--  -->
 						<!--  -->
 						<div class="input-h">
-							<button class="btn btn-dark">Submit</button>
+							<button type="submit" name="submit" class="btn btn-dark">Submit</button>
 						</div>
 						<!--  -->
 					</form>
@@ -63,3 +68,22 @@
 	<!--  -->
 </body>
 </html>
+
+<?php
+//handling the form submissions
+
+if(isset($_POST['submit'])){
+
+echo "We are set bro";
+
+$firstName = $_POST["first_name"];
+$lastName = $_POST["last_name"];
+$email = $_POST["email"];
+$password = $_POST["password"];
+
+
+insertUser($firstName,$lastName,$email,$password);
+
+}
+
+?>
