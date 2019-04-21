@@ -14,33 +14,37 @@
 </head>
 <body>
     <?php
-    //Session start
-    session_start();
-    require "database/database.php";
-    $conn = new PDO("mysql:host=$dbServer;dbname=$dbname", $dbusername, $dbpassword);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $errMsg ="";
-
-    if(isset($_POST['submit'])){
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        echo $email;
-        echo $password;
-        $stmt = $conn->prepare("SELECT*FROM users WHERE email =:email AND password =:password");
-        $stmt ->bindParam(':email',$email);
-        $stmt ->bindParam(':password', $password);
-        $stmt->execute();
-        $results = $stmt->fetch();
-        if($stmt->rowCount() >= 1 ){
-            echo "<script>alert('hello you have logged in')</script>";
-			$_SESSION['email'] = $email;
-			header("Location: rooms.php");
-    		 die('should have redirected by now');
-
-        }else{
-            $errMsg = "<p style='color:red;'>You are not logged</p>";
-        }
-    }
+		try{
+			   //Session start
+			   session_start();
+			   require "database/database.php";
+			   $conn = new PDO("mysql:host=$dbServer;dbname=$dbname", $dbusername, $dbpassword);
+			   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			   $errMsg ="";
+		   
+			   if(isset($_POST['submit'])){
+				   $email = $_POST["email"];
+				   $password = $_POST["password"];
+				   echo $email;
+				   echo $password;
+				   $stmt = $conn->prepare("SELECT*FROM users WHERE email =:email AND password =:password");
+				   $stmt ->bindParam(':email',$email);
+				   $stmt ->bindParam(':password', $password);
+				   $stmt->execute();
+				   $results = $stmt->fetch();
+				   if($stmt->rowCount() >= 1 ){
+					   echo "<script>alert('hello you have logged in')</script>";
+					   $_SESSION['email'] = $email;
+					   header("Location: rooms.php");
+						die('should have redirected by now');
+		   
+				   }else{
+					   $errMsg = "<p style='color:red;'>You are not logged</p>";
+				   }
+			   }
+		} catch(PDOException $exc){
+			echo "<div class='text-center'>Database connection error.</div>";
+		}
 
     ?>
 	<!-- include the main header -->
