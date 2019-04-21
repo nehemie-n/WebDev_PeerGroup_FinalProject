@@ -34,7 +34,7 @@ footer h1{
 }
 footer .row {
     justify-content: center;
-    min-height: 40vh;
+    min-height: 400px;
     align-items: center;
 }
 

@@ -32,10 +32,13 @@
         $stmt->execute();
         $results = $stmt->fetch();
         if($stmt->rowCount() >= 1 ){
-            $_SESSION['email'] = $email;
             echo "<script>alert('hello you have logged in')</script>";
+			$_SESSION['email'] = $email;
+			header("Location: rooms.php");
+    		 die('should have redirected by now');
+
         }else{
-            $errMsg = "<p>You are not logged</p>";
+            $errMsg = "<p style='color:red;'>You are not logged</p>";
         }
     }
 

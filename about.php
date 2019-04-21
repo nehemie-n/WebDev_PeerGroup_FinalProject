@@ -51,24 +51,12 @@
 					<div class="col col-70">
 						<div class="row-images row">
 							<div class="col-img" style="background-image:url('./images/dmitriy-alaev-1231935-unsplash.jpg')">
-								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
-								</div>
 							</div>
 							<div class="col-img" style="background-image:url('./images/gabriel-ghnassia-518-unsplash.jpg')">
-								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
-								</div>
 							</div>
 							<div class="col-img" style="background-image:url('./images/hubert-mousseigne-661236-unsplash.jpg')">
-								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
-								</div>
 							</div>
 							<div class="col-img" style="background-image:url('./images/mohamed-ajufaan-701619-unsplash.jpg')">
-								<div class="btn-h">
-									<button class="btn btn-dark">Check these</button>
-								</div>
 							</div>
 						</div>
 					</div>	
