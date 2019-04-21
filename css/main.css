@@ -64,6 +64,10 @@ h5 {
     color: #f8a22f;
 }
 
+.text-white {
+    color: whitesmoke;
+}
+
 .text-dark {
     color: black;
 }
@@ -92,9 +96,10 @@ h5 {
 }
 
 /* paddings */
-.p3{
+.p3 {
     padding: 2rem 1rem;
 }
+
 .wrapper {}
 
 /**
@@ -327,9 +332,10 @@ Want to book section */
     font-size: 14px;
 }
 
-select{
+select {
     padding: 0.5rem;
 }
+
 .form .input-h {
     padding: 0.5rem;
     display: flex;
@@ -465,4 +471,92 @@ select{
     top: 1vh;
     width: 100%;
     text-align: center;
+}
+
+/* 
+* Chat css
+*/
+/* for specifically chat page */
+#chatpage {}
+
+#chatpage .main {
+    height: 100vh;
+    background: url('./../images/fano-miasta-180712-unsplash.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+#chatpage .over {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.6);
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#chatpage .expl-col {
+    min-height: 90vh;
+    align-items: center;
+    padding-bottom: 10%;
+}
+
+#chatpage form{
+    display: flex;
+    width: 100%;
+    border-radius: 1rem;
+    padding-left: 10px;
+    align-items: center;
+}
+#chatpage input{
+    border-radius: 3rem;
+    border: 2px solid black;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    /* max-height: 40px; */
+}
+#chatpage input:focus{
+    outline: none;
+}
+.chat-h {
+    background: whitesmoke;
+    border-radius: 10px;
+    top: 70px;
+    bottom: 5px;
+    width: 30%;
+    right: 20px;
+    position: fixed;
+
+}
+
+.msg-holders {
+    overflow-y: scroll;
+    height: calc(100% - 50px);
+}
+.msg-holders{
+    padding: 10px 10px;
+}
+.msg {
+    max-width: 70%;
+    border: 1px solid whitesmoke;
+    padding: 0.6rem 1rem;
+    margin: 10px 0px;
+    display: flex;
+}
+
+.msg-left {
+    background: #dadada;
+    color: black;
+    border-radius: 2rem;
+    border-bottom-right-radius: 0px;
+}
+
+.msg-right {
+    background: black;
+    color: white;
+    border-radius: 2rem;
+    border-bottom-left-radius: 0px;
+    margin-left: auto;
 }

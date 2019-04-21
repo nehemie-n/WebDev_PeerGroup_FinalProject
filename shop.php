@@ -51,7 +51,7 @@
 									<div class="top">
 										From <?php echo $rooms[$i][3]; ?>
 										<div class="buy-btn-h">
-											<button class="btn btn-primary">Buy</button>
+											<a href="./chat.php" class="btn btn-primary">Buy</a>
 										</div>
 									</div>
 									<div class="bottom">
