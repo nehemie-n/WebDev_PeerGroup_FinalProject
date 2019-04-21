@@ -14,6 +14,7 @@
 </head>
 <body>
     <?php
+    //Session start
     session_start();
     require "database/database.php";
     $conn = new PDO("mysql:host=$dbServer;dbname=$dbname", $dbusername, $dbpassword);
@@ -32,7 +33,7 @@
         $results = $stmt->fetch();
         if($stmt->rowCount() >= 1 ){
             $_SESSION['email'] = $email;
-            echo "<script>alert('hello you have logged in ')</script>";
+            echo "<script>alert('hello you have logged in')</script>";
         }else{
             $errMsg = "<p>You are not logged</p>";
         }
