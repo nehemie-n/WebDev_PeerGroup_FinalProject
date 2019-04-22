@@ -25,8 +25,6 @@
 			   if(isset($_POST['submit'])){
 				   $email = $_POST["email"];
 				   $password = $_POST["password"];
-				   echo $email;
-				   echo $password;
 				   $stmt = $conn->prepare("SELECT*FROM users WHERE email =:email AND password =:password");
 				   $stmt ->bindParam(':email',$email);
 				   $stmt ->bindParam(':password', $password);
