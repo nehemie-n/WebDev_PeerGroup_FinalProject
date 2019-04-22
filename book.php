@@ -2,7 +2,7 @@
 ob_start();
 //Session start
 session_start();
-if(isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+if(isset($_SESSION['email'])) {
 	header("Location: index.php");
      die('should have redirected by now');
  }
