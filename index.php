@@ -169,7 +169,6 @@ ob_start();
 							if($stmt->rowCount() >= 1 ){
 							    $_SESSION['user_id'] = $results["user_id"];
 								$_SESSION['email'] = $email;
-								ob_end_flush();
 								header("Location: rooms.php");
 								die('should have redirected by now');
 							
