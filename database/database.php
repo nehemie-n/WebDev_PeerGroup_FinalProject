@@ -36,7 +36,7 @@ function insertUser($firstName,$lastName,$email,$password){
 
 
 
-function book($room_type,$check_in_date,$check_out_date,$room_number,$description){
+function book($user_id,$room_type,$check_in_date,$check_out_date,$room_number,$description){
   try{
   $dbServer = $GLOBALS['dbServer'];
   $dbusername = $GLOBALS["dbusername"];
@@ -45,8 +45,8 @@ function book($room_type,$check_in_date,$check_out_date,$room_number,$descriptio
 
  $conn = new PDO("mysql:host=$dbServer;dbname=$dbname", $dbusername, $dbpassword);
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $sql = "INSERT INTO rooms (room_type, check_in_date, check_out_date,room_number,description)
-     VALUES ('$room_type', '$check_in_date', '$check_out_date','$room_number','$description')";
+     $sql = "INSERT INTO rooms (user_id,room_type, check_in_date, check_out_date,room_number,description)
+     VALUES ('$user_id','$room_type', '$check_in_date', '$check_out_date','$room_number','$description')";
      // use exec() because no results are returned
      $conn->exec($sql);
      ob_end_flush();

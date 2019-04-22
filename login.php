@@ -33,7 +33,7 @@
 				   $stmt->execute();
 				   $results = $stmt->fetch();
 				   if($stmt->rowCount() >= 1 ){
-				        $_SESSION['user_id'] = $results["user_id"];
+				       $_SESSION['user_id'] = $results["user_id"];
 					   echo "<script>alert('hello you have logged in')</script>";
 					   $_SESSION['email'] = $email;
 					   header("Location: rooms.php");

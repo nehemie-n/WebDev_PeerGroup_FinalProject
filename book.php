@@ -1,5 +1,7 @@
 <?php
 ob_start();
+//Session start
+session_start();
 if(isset($_SESSION['email']) && !empty($_SESSION['email'])) {
 	header("Location: index.php");
      die('should have redirected by now');
@@ -96,8 +98,9 @@ if(isset($_POST['submit'])){
 	$check_in_date = $_POST["check_in_date"];
 	$check_out_date = $_POST["check_out_date"];
 	$description = $_POST["description"];
+	$user_id = $_SESSION['user_id'];
 
-	book($room_type,$check_in_date,$check_out_date,$room_number,$description);
+	book($user_id,$room_type,$check_in_date,$check_out_date,$room_number,$description);
 	
 	
 
