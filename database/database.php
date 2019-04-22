@@ -1,7 +1,7 @@
 <?php
 $GLOBALS["dbServer"] = "localhost";
 $GLOBALS["dbusername"] = "root";
-$GLOBALS["dbpassword"] = "";
+$GLOBALS["dbpassword"] = "txd852168";
 $GLOBALS["dbname"] = "hotel";
 
 
